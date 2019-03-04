@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Upload your image</h1>
+<form action="/upload"  method="post" enctype="multipart/form-data">
+    <input type="file" name="photo" /><br><br>
+    <label for="text">Some Desc</label>
+    <input type="text" name="desc" />
+    <input type="submit" />
+    </form> 
+</body>
+</html>

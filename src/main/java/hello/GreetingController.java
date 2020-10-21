@@ -41,6 +41,7 @@ public class GreetingController {
         return mv;
     }
 
+
     @GetMapping("/index")
     public ModelAndView renderUploadPage() {
         //System.out.println(accesskey  + bucketName + secretkey);
@@ -51,6 +52,7 @@ public class GreetingController {
     public ModelAndView uploads3(@RequestParam("photo") MultipartFile image, @RequestParam(name = "desc") String desc) {
         ModelAndView returnPage = new ModelAndView();
         System.out.println("description      " + desc);
+        System.out.println(image.getOriginalFilename());
     
         BasicAWSCredentials cred = new BasicAWSCredentials(accesskey, secretkey);
         // AmazonS3Client client=AmazonS3ClientBuilder.standard().withCredentials(new
@@ -67,6 +69,8 @@ public class GreetingController {
             returnPage.setViewName("showImage");
             returnPage.addObject("name", desc);
             returnPage.addObject("imgSrc", imgSrc);
+
+            //Save this in the DB. 
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -75,5 +79,6 @@ public class GreetingController {
         return returnPage;
 
     }
+
 
 }

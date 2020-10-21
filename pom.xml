@@ -38,12 +38,12 @@
         <dependency>
     			<groupId>com.amazonaws</groupId>
     			<artifactId>aws-java-sdk</artifactId>
-    			<version>1.11.163</version>
+    			<version>1.11.884</version>
 		</dependency>
     </dependencies>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
     </properties>
 
 
